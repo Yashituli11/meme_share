@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/ivMemeShare"
+        android:layout_width="409dp"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/memes"
+        app:layout_constraintBottom_toTopOf="@id/bNext"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.826"
+        tools:ignore="ImageContrastCheck"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ProgressBar
+       android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/ivMemeShare"
+        app:layout_constraintBottom_toBottomOf="@id/ivMemeShare"
+        app:layout_constraintRight_toRightOf="@id/ivMemeShare"
+        app:layout_constraintLeft_toLeftOf="@id/ivMemeShare"/>
+
+    <Button
+        android:id="@+id/bShare"
+        android:layout_width="179dp"
+        android:layout_height="57dp"
+        android:text="@string/share"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.946"
+        android:onClick="shareMeme"/>
+
+    <Button
+        android:id="@+id/bNext"
+        android:layout_width="180dp"
+        android:layout_height="56dp"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="@+id/bShare"
+        app:layout_constraintTop_toTopOf="@+id/bShare"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="218dp"
+        app:layout_constraintLeft_toRightOf="@id/guideline2"
+        app:layout_constraintRight_toRightOf="parent"
+        android:onClick="nextMeme"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+       app:layout_constraintGuide_percent="0.5" />
+</androidx.constraintlayout.widget.ConstraintLayout>
